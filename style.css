@@ -1,0 +1,149 @@
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+ul,li {
+  list-style: none;
+}
+
+body {
+  /* font: 20px/1.5; */
+
+  background: linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0), rgba(0, 0, 0, 0.5)), url(./imges/格利奥托克岛\ 克罗地亚.jpg) center center no-repeat;
+  min-height: 100vh;
+  background-size: cover;
+  backdrop-filter: blur(3px);
+}
+
+.icon {
+  width: 1em; height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+ 
+}
+
+#page {
+  max-width: 600px;
+  margin: 0 auto; 
+  /* overflow: hidden;  */
+  padding: 10px;
+}
+
+#search {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search-type {
+  display: flex;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+
+.search-tab {
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+  padding: 2px 5px;
+  margin-right: 10px;
+  border-radius: 4px;
+  transition: transform .3s;
+  cursor: pointer;
+  color: #ccc;
+}
+
+.search-tab:hover {
+  transform: translate(-5px, -5px);
+  background-color: coral;
+}
+
+.search-input {
+  position: relative;
+  width: 350px;
+  /* border: 1px solid #ccc; */
+  box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  transition: width 0.3s;
+  overflow: hidden;
+
+}
+
+.search-input:hover {
+  width: 500px
+}
+
+.search-input  .icon {
+  position: absolute;
+  /* z-index: 1; */
+  right: 0px;
+  top: 4px;
+  width: 28px;
+  height: 28px;
+}
+
+.search-input > input{
+  width: 100%;
+  padding: 0 22px;
+  line-height: 40px;
+  /* border-radius: 4px; */
+  border: none;
+  outline: none;
+  font-size: 20px;
+}
+
+
+
+.search-input > input::placeholder {
+  color: #999;
+}
+
+.search-input > input:focus {
+
+}
+
+#websites .item {
+  margin-top: 60px;
+}
+
+#websites .list h2 {
+  color: #fff;
+  font-size: 30px;
+}
+
+#websites .panel{
+  display: flex;
+  flex-wrap: wrap;
+  background: rgba(255, 255, 255, 0.4);
+  /* box-shadow: 0 0 6px 0  ; */
+  padding: 10px;
+  margin-top: 20px;
+
+
+}
+
+#websites .tag {
+  padding: 4px 10px;
+  margin: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#websites .tag:nth-child(4n+1) {
+  background-color: rgb(188, 117, 165);
+}
+
+#websites .tag:nth-child(4n+2) {
+  background-color: rgb(182, 154, 210);
+}
+
+#websites .tag:nth-child(4n+3) {
+  background-color: lightblue;
+}
+
+#websites .tag:nth-child(4n+4) {
+  background-color: lightcoral;
+}
