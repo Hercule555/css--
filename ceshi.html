@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .fa {
+      /* width: 100px; */
+      /* height: 100px; */
+      border: 1px solid rebeccapurple;
+      /* display: inline-flex; */
+    }
+
+    .box {
+      width: 40px;
+      height: 40px;
+      border: 1px red solid;
+      display: inline-flex;
+    }
+
+    .se {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      
+    }
+
+  </style>
+</head>
+<body>
+  <section class="se">
+    <div class="fa">
+      <div class="box">box1</div>
+      <div class="box">box2</div>
+  
+    </div>
+  </section>
+
+
+
+  <script>
+    // let obj = {
+    //   name: 'xiao',
+    //   2 : 50,
+
+    // }
+
+    // obj['1'] = 30
+    // let key = 8
+    // obj[key] = 'mi'
+    // document.onkeyup = function(e) {
+    //   console.log(e)
+    // }
+
+    let arr = [1,2,3,4,5,6,7,8]
+    let num = arr.find(item=> 2)
+
+    const $$box = document.querySelectorAll('.box') 
+    
+     let box = [...$$box]
+     let boxAr = box[0].innerText = '你好'
+  </script>
+</body>
+</html>

@@ -8,6 +8,8 @@ ul,li {
   list-style: none;
 }
 
+a {text-decoration: none;}
+
 body {
   /* font: 20px/1.5; */
 
@@ -22,7 +24,56 @@ body {
   vertical-align: -0.15em;
   fill: currentColor;
   overflow: hidden;
- 
+  cursor: pointer;
+}
+
+#setting {
+  position: fixed;
+  top: 30px;
+  left: 30px;
+  color:aqua;
+}
+
+#setting .icon {
+  font-size: 40px;
+}
+
+#plus {
+ text-align: center;
+ display: none;
+ margin-top: 30px;
+}
+
+#plus .icon {
+  font-size: 50px;
+  /* background-color: #fff; */
+  color: #fff;
+}
+
+.panel .icon-remove {
+  position: absolute;
+  left: 32px;
+  top: -15px;
+  width: 30px;
+  height: 30px;
+  display: none;
+}
+
+#websites .icon-delete,
+#websites .icon-edit ,
+  .panel .icon-add  {
+  display: none;
+}
+
+body.setting #websites .icon-delete,
+body.setting #websites .icon-edit  {                         
+  
+  display: inline;
+}
+
+body.setting .panel .icon-add,
+body.setting .panel .icon-remove{
+  display: block;
 }
 
 #page {
@@ -58,6 +109,10 @@ body {
 
 .search-tab:hover {
   transform: translate(-5px, -5px);
+  background-color: coral;
+}
+
+.active {
   background-color: coral;
 }
 
@@ -121,11 +176,12 @@ body {
   /* box-shadow: 0 0 6px 0  ; */
   padding: 10px;
   margin-top: 20px;
-
+  min-height: 100px;
 
 }
 
 #websites .tag {
+  position: relative;
   padding: 4px 10px;
   margin: 5px 10px;
   border-radius: 5px;
@@ -146,4 +202,65 @@ body {
 
 #websites .tag:nth-child(4n+4) {
   background-color: lightcoral;
+}
+
+body.preview .icon-back {
+  display: none;
+}
+
+body.setting .icon-set {
+  display: none;
+}
+
+#setting .iconSet:hover {
+  background-color: rgb(21, 22, 22);
+  border-radius:4px ;
+  padding: 5px;
+  transition: all 0.3s;
+}
+
+body.setting #plus {
+  display: block;
+}
+
+.modal {
+  position: fixed;
+  left: 50%; 
+  top: 50%; 
+  transform: translate(-50%,-100vh);  /* 注意为什么要加这一步。后面改为-100vh是因为遮挡了其它模块（原本为-50%），-100vh在垂直方向的屏幕外*/
+  width: 600px;
+  background-color:#fff;
+  padding: 15px;
+  border-radius: 5px;
+  opacity: 0;           /*可通过opacity 和transform 写出弹窗效果。和212-215代码搭配       */
+  transition: all 0.3s;
+}
+
+.modal.show {
+  opacity: 1;
+  transform: translate(-50%,-50%);
+}
+
+.modal .button {
+  display: flex;
+  justify-content: flex-end;
+  
+}
+
+.modal  .button-m {
+  margin: 0 4px;
+  background-color: #ccc;
+  padding: 2px 4px;
+  cursor: pointer;
+}
+
+.modal input {
+  line-height: 25px;
+  width: 100%;
+  font-size: 20px;
+  padding:  5px;
+}
+
+.modal .field {
+  margin: 10px 0;
 }
