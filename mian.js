@@ -255,12 +255,13 @@ function search() {   //这因为两个事件都用了同样的代码，所以�
   
   $('.list').onclick = function(e) {  //用事件代理，为什么要给.list绑定呢，因为如果单独给图标绑定，那么我们后续添加的模块都需要再绑定，会很麻烦。又因为添加的模块全都在 .list里所以可以对它绑定。
     //而且 .list 是实际写在html里的，而 .item 里面的是我们暂时用js写的dom结构
-    console.log(e.path)
+    console.log(e)
 
-    let $delete = e.path.find($node => $node.classList&& $node.classList.contains('icon-delete') )  // 更改的①
+    let $delete = e.composedPath().find($node => $node.classList&& $node.classList.contains('icon-delete') )  // 更改的①
+    
 
     if($delete) {  //更改② （ 这里只加了if($delete){} ）  如果$delete 存在，就执行里面的代码
-      let $result = e.path.filter($node => $node.classList&& $node.classList.contains('item') ) 
+      let $result = e.composedPath().filter($node => $node.classList&& $node.classList.contains('item') ) 
 
      if($result.length>0){
        let $item = $result[0]  //找到点击是哪一个
@@ -283,10 +284,10 @@ function search() {   //这因为两个事件都用了同样的代码，所以�
     
     
     //下面是点击编辑标题
-    let $edit = e.path.find($node => $node.classList&& $node.classList.contains('icon-edit') )
+    let $edit = e.composedPath().find($node => $node.classList&& $node.classList.contains('icon-edit') )
     
     if($edit) {  
-      let $result = e.path.filter($node => $node.classList&& $node.classList.contains('item') ) 
+      let $result = e.composedPath().filter($node => $node.classList&& $node.classList.contains('item') ) 
 
      if($result.length>0){
        let $item = $result[0] 
@@ -309,10 +310,10 @@ function search() {   //这因为两个事件都用了同样的代码，所以�
     } 
 
     //添加小模块
-    let $add = e.path.find($node => $node.classList&& $node.classList.contains('icon-add') )
+    let $add = e.composedPath().find($node => $node.classList&& $node.classList.contains('icon-add') )
 
     if($add) {  
-      let $result = e.path.filter($node => $node.classList&& $node.classList.contains('item') ) 
+      let $result = e.composedPath().filter($node => $node.classList&& $node.classList.contains('item') ) 
 
      if($result.length>0){
        let $item = $result[0] 
@@ -331,7 +332,7 @@ function search() {   //这因为两个事件都用了同样的代码，所以�
     } 
 
     //移除小模块
-    let $remove = e.path.find($node => $node.classList&& $node.classList.contains('icon-remove') )
+    let $remove = e.composedPath().find($node => $node.classList&& $node.classList.contains('icon-remove') )
     
     if($remove) { 
 
@@ -340,7 +341,7 @@ function search() {   //这因为两个事件都用了同样的代码，所以�
     let tagIndex = tagArr.indexOf($tag)
     console.log(tagIndex)
     window.$remove = $remove  //为了能在后台写出$remove便于观察,不过需要先点击 icon-remove 
-    let $result = e.path.filter($node => $node.classList&& $node.classList.contains('item') ) 
+    let $result = e.composedPath().filter($node => $node.classList&& $node.classList.contains('item') ) 
 
      if($result.length>0){
        let $item = $result[0]  
